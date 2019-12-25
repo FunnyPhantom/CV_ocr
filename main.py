@@ -34,18 +34,17 @@ allData = allData[:, 5:65, 5:65]
 
 
 def binerize(x):
-    return 1 if x > 0.5 else 0
+    return 1 if x > 0.9 else 0
 
 
 vectorized_binerize = np.vectorize(binerize)
 
 
-allData = vectorized_binerize(allData)
-
 allData = trans.resize(allData, (470, 28, 28))
 
-np.save("data.npy", allData)
+allData = vectorized_binerize(allData)
 
+np.save('duset_daram.npy', allData)
 
 for i in range(10):
     io.imshow(allData[i])
