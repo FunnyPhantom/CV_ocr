@@ -44,7 +44,7 @@ allData = trans.resize(allData, (470, 28, 28))
 
 allData = vectorized_binerize(allData)
 
-np.save('duset_daram.npy', allData)
+np.save('data_new.npy', allData)
 
 for i in range(10):
     io.imshow(allData[i])
